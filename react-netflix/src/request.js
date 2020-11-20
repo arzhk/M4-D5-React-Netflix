@@ -1,8 +1,8 @@
 
 
- request={
-     Key_API :"?api_key=8e9a7e01dd11820116638ad6ac4dbc4d",
- url:"https://api.themoviedb.org/3/movie/"
+ const request={
+     Key_API :"&apikey=925b91e7",
+ url: "http://www.omdbapi.com/"
 
 
 }
