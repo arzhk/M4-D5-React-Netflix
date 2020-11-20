@@ -4,7 +4,7 @@ import CommentArea from "./CommentArea";
 
 class MovieCard extends React.Component {
   state = {
-    elementId: this.props.id,
+    elementId: this.props.movieId,
     category: this.props.category,
     title: this.props.title,
     description: this.props.description,
@@ -33,7 +33,7 @@ class MovieCard extends React.Component {
             <Modal.Title>Reviews</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <CommentArea MovieID={this.state.elementID} image={image} />
+            <CommentArea MovieID={this.state.elementId} image={image} />
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.closeModal}>

@@ -44,24 +44,20 @@ class CommentArea extends React.Component {
           <Row>
             <AddComment
               fetchComments={this.fetchComments}
-              bookID={this.props.bookID}
+              MovieID={this.props.MovieID}
             />
           </Row>
         </Container>
         <ListGroup.Item>
-          {this.state.comments.map((comment) => {
-            return (
-              <>
-                <p>
-                  {comment.comment} (
-                  {Array.from({ length: comment.rate }).map((star) => (
-                    <span>&#9734;</span>
-                  ))}
-                  )
-                </p>
-              </>
-            );
-          })}
+          {this.state.comments.map((comment, index) => (
+            <p key={index}>
+              {comment.comment} (
+              {Array.from({ length: comment.rate }).map((star) => (
+                <span>&#9734;</span>
+              ))}
+              )
+            </p>
+          ))}
         </ListGroup.Item>
       </div>
     );

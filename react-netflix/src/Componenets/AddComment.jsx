@@ -22,7 +22,7 @@ class AddComment extends React.Component {
     e.preventDefault();
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+        `https://striveschool-api.herokuapp.com/api/comments/`,
         {
           method: "POST",
           body: JSON.stringify(this.state.comment),
@@ -72,7 +72,7 @@ class AddComment extends React.Component {
                   as="textarea"
                   name="comment"
                   id="comment"
-                  placeholder="What did you think?"
+                  placeholder="What do you think?"
                   value={this.state.comment.comment}
                   onChange={this.updateCommentField}
                   required
@@ -101,7 +101,12 @@ class AddComment extends React.Component {
               </Form.Group>
             </Col>
             <Col xs={6}>
-              <Button type="sumbit" variant="success" value="Submit">
+              <Button
+                type="sumbit"
+                variant="success"
+                value="Submit"
+                className="mt-2"
+              >
                 Submit{" "}
               </Button>
             </Col>
