@@ -1,0 +1,104 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #141414;
+}
+
+a {
+  color: #c2c2c2;
+}
+
+a:hover {
+  color: #f3f3f3;
+}
+
+/* Homepage Styling */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+}
+
+.shows-row {
+  overflow: scroll hidden;
+  white-space: nowrap;
+  padding: 6px 0px;
+}
+
+.show-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+  border-radius: 4px;
+}
+
+.show-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(26, 26, 26);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.781) 64%,
+    rgba(0, 0, 0, 0.555) 82%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translateY(96px);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.show-img {
+  width: 100%;
+  position: relative;
+  top: -50%;
+}
+
+.show-wrapper:hover .show-content {
+  transform: translateY(0);
+}
+
+.show-content p {
+  color: rgb(148, 148, 148);
+  font-size: 0.8rem;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(83, 83, 83);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(163, 163, 163);
+}
+
+/*************************************************/
