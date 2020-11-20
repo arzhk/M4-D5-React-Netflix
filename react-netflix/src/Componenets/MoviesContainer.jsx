@@ -74,10 +74,10 @@ class MoviesContainer extends React.Component {
   render() {
     return (
       <div>
-        <Container className="my-5">
+        <Container fluid className="my-5">
+          <MovieRow key={3} title="Netflix Originals" movieData={this.state.originalNetflix} isTall={true} />
           <MovieRow key={1} title="Trending Now" movieData={this.state.trendingMovies} isTall={false} />
           <MovieRow key={2} title="New Releases" movieData={this.state.newMovies} isTall={false} />
-          <MovieRow key={3} title="Netflix Originals" movieData={this.state.originalNetflix} isTall={true} />
         </Container>
       </div>
     );

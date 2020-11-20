@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #141414;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -215,12 +216,6 @@ html {
   color: white;
 }
 
-h1 {
-  font-family: Arial;
-  color: rgba(187, 18, 18, 0.39);
-  text-align: center;
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 100%);
@@ -266,15 +261,6 @@ h1 {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 }
 
-@media only screen and (max-width: 600px) {
-  a.arrow__btn {
-    display: none;
-  }
-}
-
-a {
-  color: #808080 !important;
-}
 .jumbotron {
   position: relative;
   overflow: hidden;
@@ -293,12 +279,15 @@ a {
   z-index: 2;
   position: relative;
 }
-#fku {
-  transition: all 0.25s ease;
-}
-#fku:hover {
-  color: transparent;
-}
-i {
-  color: #808080;
+
+.jumbotron::before {
+  content: "";
+  background: rgb(20, 20, 20);
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0) 34%, rgba(20, 20, 20, 1) 100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }

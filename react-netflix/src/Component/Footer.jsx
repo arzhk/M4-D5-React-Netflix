@@ -8,7 +8,7 @@ class Footer extends Component {
         {/* Footer */}
         <footer className="page-footer font-small stylish-color-dark pt-4">
           {/* Footer Links */}
-          <div className="container text-center text-md-left">
+          <div className="container text-left">
             {/* Grid row */}
             <div className="row">
               {/* Grid column */}
@@ -22,8 +22,9 @@ class Footer extends Component {
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-tw mx-1"></a>
-                    <i class="fab fa-instagram fa-2x"></i>
+                    <a className="btn-floating btn-tw mx-1">
+                      <i class="fab fa-instagram fa-2x"></i>
+                    </a>
                   </li>
                   <li className="list-inline-item">
                     <a className="btn-floating btn-gplus mx-1">
@@ -44,21 +45,21 @@ class Footer extends Component {
 
             {/* Grid column */}
             <div className="row">
-              <div className="col-md-2 mx-auto">
+              <div className="col-md-2 ml-0">
                 {/* Links */}
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Link 1</a>
+                    <a href="#!">Audio and Subtitles</a>
                   </li>
                   <li>
-                    <a href="#!">Link 2</a>
+                    <a href="#!">Audio Description</a>
                   </li>
                   <li>
-                    <a href="#!">Link 3</a>
+                    <a href="https://help.netflix.com/">Help Center</a>
                   </li>
                   <li>
-                    <a href="#!">Link 4</a>
+                    <a href="#!">Gift Cards</a>
                   </li>
                 </ul>
               </div>
@@ -70,16 +71,16 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Link 1</a>
+                    <a href="https://media.netflix.com/">Media Center</a>
                   </li>
                   <li>
-                    <a href="#!">Link 2</a>
+                    <a href="#!">Investor Relations</a>
                   </li>
                   <li>
-                    <a href="#!">Link 3</a>
+                    <a href="#!">Jobs</a>
                   </li>
                   <li>
-                    <a href="#!">Link 4</a>
+                    <a href="#!">Terms of Use</a>
                   </li>
                 </ul>
               </div>
@@ -91,16 +92,16 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Link 1</a>
+                    <a href="#!">Privacy</a>
                   </li>
                   <li>
-                    <a href="#!">Link 2</a>
+                    <a href="#!">Legal Notices</a>
                   </li>
                   <li>
-                    <a href="#!">Link 3</a>
+                    <a href="#!">Cookie Preferences</a>
                   </li>
                   <li>
-                    <a href="#!">Link 4</a>
+                    <a href="#!">Corporate Information</a>
                   </li>
                 </ul>
               </div>
@@ -111,16 +112,7 @@ class Footer extends Component {
               <div className="col-md-2 mx-auto">
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Link 1</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 2</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 3</a>
-                  </li>
-                  <li>
-                    <a href="#!">Link 4</a>
+                    <a href="#!">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -133,8 +125,7 @@ class Footer extends Component {
 
             {/* Copyright */}
             <div className="footer-copyright text-center py-3">
-              © 2020 Copyright:
-              <a href="https://netflix.com/"> netflix.com</a>
+              <a href="https://netflix.com/">© 2020 Copyright: netflix.com</a>
             </div>
           </div>
           {/* Copyright */}

@@ -1,9 +1,10 @@
 import React from "react";
-import { ListGroup, Button, Col, Container, Form, Row } from "react-bootstrap";
+import { ListGroup, Col, Container, Row } from "react-bootstrap";
 import AddComment from "./AddComment";
 class CommentArea extends React.Component {
   state = {
     comments: [],
+    movieID: this.props.movieID,
   };
 
   componentDidMount = () => {
@@ -26,6 +27,7 @@ class CommentArea extends React.Component {
     }
   };
   render() {
+    console.log(this.state.movieID);
     return (
       <div>
         <Container id="commentArea">
