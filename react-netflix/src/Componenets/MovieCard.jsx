@@ -43,6 +43,8 @@ class MovieCard extends React.Component {
         </Modal>
         ;
         <img className="show-img" src={image} />
+      <div className={category === "Netflix Originals" ? "show-wrapper show-wrapper-lg mr-2 " : "show-wrapper mr-2"}>
+        <img className={category === "Netflix Originals" ? "show-img" : "show-img img-shift"} src={image} />
         <div
           className={
             category === "Netflix Originals"

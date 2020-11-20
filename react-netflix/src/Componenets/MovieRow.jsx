@@ -25,6 +25,14 @@ class MovieRow extends React.Component {
                 category={title}
               />
             );
+            return (
+              <MovieCard
+                title={e.Title}
+                description={e.Plot}
+                image={e.Poster}
+                category={title}
+              />
+            );
           })}
         </div>
       </div>
