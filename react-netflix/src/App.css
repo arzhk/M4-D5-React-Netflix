@@ -89,9 +89,13 @@ h6 {
   width: 100%;
 }
 
-.show-img {
+.show-content-lg .show-img {
   width: 100%;
   position: relative;
+}
+
+.img-shift {
+  top: -50%;
 }
 
 .show-wrapper:hover .show-content,
