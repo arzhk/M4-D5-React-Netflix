@@ -57,7 +57,6 @@ h6 {
     rgba(0, 0, 0, 0.555) 82%,
     rgba(0, 0, 0, 0) 100%
   );
-  transform: translateY(96px);
   transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
@@ -75,8 +74,16 @@ h6 {
     rgba(0, 0, 0, 0.555) 82%,
     rgba(0, 0, 0, 0) 100%
   );
-  transform: translateY(218px);
+
   transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.translateY {
+  transform: translateY(98px);
+}
+
+.translateY-lg {
+  transform: translateY(218px);
 }
 
 .show-content h5 {
@@ -170,4 +177,24 @@ h6 {
   background: rgb(163, 163, 163);
 }
 
+/*************************************************/
+
+/* Modal Styling */
+
+.modal-content {
+  background-color: #141414;
+  color: #fff;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.list-group-item {
+  background-color: #141414;
+}
 /*************************************************/
