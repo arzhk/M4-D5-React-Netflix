@@ -2,11 +2,21 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MoviesContainer from "./Componenets/MoviesContainer";
+import Navbar from "./Component/NavBar";
+import Jumbotron from "./Component/Jumbotron";
+import Footer from "./Component/Footer";
 
-function App() {
-  return(
-    <MoviesContainer/>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <Jumbotron />
+        <MoviesContainer />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;
