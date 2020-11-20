@@ -3,6 +3,8 @@ import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 import netflixlogo from "../images/netflixlogo.png";
 import searchIcon from "../images/searchIcon.png";
 import giftIcon from "../images/giftIcon.png";
+import bell from "../images/bell.png";
+import user from "../images/user.png";
 class NavBar extends React.Component {
   state = {
     isSearch: false,
@@ -27,7 +29,6 @@ class NavBar extends React.Component {
           <Navbar.Brand href="#home">
             <img src={netflixlogo} width="auto" height="33px" className="mb-0 ml-4" alt="React Bootstrap logo" />
           </Navbar.Brand>
-
           <Nav className="mr-auto mb-0">
             <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Home</Nav.Link>
             <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Tv Shows</Nav.Link>
@@ -51,8 +52,24 @@ class NavBar extends React.Component {
               placeholder="Titles,people,genres"
             />
             <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>KIDS</Nav.Link>
-            <img style={{ height: "20px" }} src={giftIcon}></img>
+            <img style={{ height: "20px", marginRight: "20px" }} src={giftIcon}></img>
           </Form>
+          <img
+            style={{
+              height: "20px",
+              cursor: "pointer",
+              marginRight: "10px",
+            }}
+            src={bell}
+          ></img>{" "}
+          <img
+            style={{
+              height: "20px",
+              cursor: "pointer",
+              marginRight: "10px",
+            }}
+            src={user}
+          ></img>
         </Navbar>
       </div>
     );

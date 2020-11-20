@@ -6,7 +6,7 @@ class JumboTron extends Component {
   render() {
     return (
       <div>
-        <Jumbotron fluid style={{ height: "75vh" }}>
+        <Jumbotron fluid style={{ height: "65vh" }}>
           <div
             className="d-flex align-items-center justify-content-center"
             style={{
@@ -32,9 +32,10 @@ class JumboTron extends Component {
           >
             <h1>Big Mouth</h1>
             <h4 className="mb-4">Season 4 now available!</h4>
-
-            <button className="mr-2 btn btn-danger">Watch Now</button>
-            <button className="mr-2 btn btn-secondary">More Info</button>
+            <button className="mr-2 py-2 px-3 btn btn-danger">
+              <i className="fas fa-play mr-2"></i>Play episode
+            </button>
+            <button className="mr-2 py-2 px-3 btn btn-secondary">Episodes</button>
           </div>
         </Jumbotron>
       </div>

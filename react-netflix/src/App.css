@@ -103,7 +103,7 @@ h6 {
 }
 
 .img-shift {
-  top: -50%;
+  top: -30%;
 }
 
 .show-wrapper:hover .show-content,
@@ -119,6 +119,7 @@ h6 {
 .show-img {
   transform: scale(1);
   transition: transform 0.25s ease-in-out;
+  position: relative;
 }
 
 .show-wrapper:hover .show-img {

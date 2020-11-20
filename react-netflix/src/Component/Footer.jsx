@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import instagramIcon from "../images/instagramIcon.png";
 
 class Footer extends Component {
   render() {
@@ -17,22 +16,22 @@ class Footer extends Component {
                 {/* Social buttons */}
                 <ul className="list-unstyled list-inline text-left ">
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-fb mx-1">
+                    <a href="#" className="btn-floating btn-fb mx-1">
                       <i class="fab fa-facebook-square fa-2x"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-tw mx-1">
+                    <a href="#" className="btn-floating btn-tw mx-1">
                       <i class="fab fa-instagram fa-2x"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-gplus mx-1">
+                    <a href="#" className="btn-floating btn-gplus mx-1">
                       <i className="fab fa-twitter fa-2x"> </i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-li mx-1">
+                    <a href="#" className="btn-floating btn-li mx-1">
                       <i class="fab fa-youtube fa-2x"></i>
                     </a>
                   </li>
@@ -50,16 +49,16 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Audio and Subtitles</a>
+                    <a href="#">Audio and Subtitles</a>
                   </li>
                   <li>
-                    <a href="#!">Audio Description</a>
+                    <a href="#">Audio Description</a>
                   </li>
                   <li>
                     <a href="https://help.netflix.com/">Help Center</a>
                   </li>
                   <li>
-                    <a href="#!">Gift Cards</a>
+                    <a href="#">Gift Cards</a>
                   </li>
                 </ul>
               </div>
@@ -74,13 +73,13 @@ class Footer extends Component {
                     <a href="https://media.netflix.com/">Media Center</a>
                   </li>
                   <li>
-                    <a href="#!">Investor Relations</a>
+                    <a href="#">Investor Relations</a>
                   </li>
                   <li>
-                    <a href="#!">Jobs</a>
+                    <a href="#">Jobs</a>
                   </li>
                   <li>
-                    <a href="#!">Terms of Use</a>
+                    <a href="#">Terms of Use</a>
                   </li>
                 </ul>
               </div>
@@ -92,16 +91,16 @@ class Footer extends Component {
 
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Privacy</a>
+                    <a href="#">Privacy</a>
                   </li>
                   <li>
-                    <a href="#!">Legal Notices</a>
+                    <a href="#">Legal Notices</a>
                   </li>
                   <li>
-                    <a href="#!">Cookie Preferences</a>
+                    <a href="#">Cookie Preferences</a>
                   </li>
                   <li>
-                    <a href="#!">Corporate Information</a>
+                    <a href="#">Corporate Information</a>
                   </li>
                 </ul>
               </div>
@@ -112,7 +111,7 @@ class Footer extends Component {
               <div className="col-md-2 mx-auto">
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!">Contact Us</a>
+                    <a href="#">Contact Us</a>
                   </li>
                 </ul>
               </div>

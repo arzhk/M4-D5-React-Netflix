@@ -25,7 +25,7 @@ class MovieCard extends React.Component {
     return (
       <>
         <div className={isTall ? "show-wrapper show-wrapper-lg mr-2 " : "show-wrapper mr-2"}>
-          <img className="show-img" src={image} alt="movie-poster" />
+          <img className={isTall ? "show-img" : "show-img img-shift"} src={image} alt="movie-poster" />
           <div
             className={
               isTall
