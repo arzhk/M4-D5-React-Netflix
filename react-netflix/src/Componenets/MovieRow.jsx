@@ -15,7 +15,6 @@ class MovieRow extends React.Component {
         <h2>{title}</h2>
         <div className="mb-4 shows-row rounded">
           {movieData.map((e) => {
-            console.log(e);
             return <MovieCard title={e.Title} description={e.Plot} image={e.Poster} category={title} />;
           })}
         </div>
