@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+Netflix, React Edition
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+      In this exercise you are gonna implement a ReactJS version of the Netflix
+      home web interface.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+        API INFO:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        Register to http://www.omdbapi.com/
 
-### `npm test`
+        Once registered, you'll receive via email an api key.
+        The API has a search method:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        http://www.omdbapi.com/?apikey=[YOUR API KEY HERE]&s=harry%20potter
 
-### `npm run build`
+        This search returns an object like this:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        {
+        "Search": [
+            {
+                "Title": "Harry Potter and the Deathly Hallows: Part 2",
+                "Year": "2011",
+                "imdbID": "tt1201607",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Sorcerer's Stone",
+                "Year": "2001",
+                "imdbID": "tt0241527",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Chamber of Secrets",
+                "Year": "2002",
+                "imdbID": "tt0295297",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Prisoner of Azkaban",
+                "Year": "2004",
+                "imdbID": "tt0304141",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Goblet of Fire",
+                "Year": "2005",
+                "imdbID": "tt0330373",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Order of the Phoenix",
+                "Year": "2007",
+                "imdbID": "tt0373889",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMTM0NTczMTUzOV5BMl5BanBnXkFtZTYwMzIxNTg3._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Deathly Hallows: Part 1",
+                "Year": "2010",
+                "imdbID": "tt0926084",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Half-Blood Prince",
+                "Year": "2009",
+                "imdbID": "tt0417741",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Chamber of Secrets",
+                "Year": "2002",
+                "imdbID": "tt0304140",
+                "Type": "game",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BNTM4NzQ2NjA4NV5BMl5BanBnXkFtZTgwODAwMjE4MDE@._V1_SX300.jpg"
+            },
+            {
+                "Title": "Harry Potter and the Forbidden Journey",
+                "Year": "2010",
+                "imdbID": "tt1756545",
+                "Type": "movie",
+                "Poster": "https://m.media-amazon.com/images/M/MV5BNDM0YzMyNGUtMTU1Yy00OTE2LWE5NzYtZDZhMTBmN2RkNjg3XkEyXkFqcGdeQXVyMzU5NjU1MDA@._V1_SX300.jpg"
+            }
+        ],
+        "totalResults": "80",
+        "Response": "True"
+      }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+      !!!PLEASE NOTE THAT THE ARRAY YOU ARE LOOKING FOR IS INTO THE .Search PROPERTY OF THE RESPONSE!!!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        You have a CRUD endpoint for comments on:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        https://striveschool-api.herokuapp.com/api/comments/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        This means you can GET, DELETE, POST, PUT data from there.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+        The Comment structure is this:
 
-## Learn More
+        {
+          "comment": "A good movie but definitely I don't like many parts of the plot",
+          "rate": 3,
+          "elementId": "tt1756545"
+        }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        Where:
+        - comment is the comment inserted by the user
+        - rate is a value between 1 and 5
+        - elementId is the imdbID of the movie / serie
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+        Create the main page starting from one of your team's Netflix project
+        with all the styles / search bar etc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+        Create, using components, the several "galleries" for the movies (at
+        least 3 galleries with 3 sagas you like (es.: Harry Potter, Lord of the
+        Rings etc))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+        Implement a working search bar that triggers the APIs and propose the
+        result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+      Implement loaders, validators and error messages for the App
+      [EXTRA] For the search, implement empty state and loaders
+      [EXTRA] Add, when clicking on a movie, the Comment list for it
 
-### `npm run build` fails to minify
+        [EXTRA] From the comment list, let the user add a comment to every movie
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+      [EXTRA] Sort every AJAX response per Year (from newer to older)
