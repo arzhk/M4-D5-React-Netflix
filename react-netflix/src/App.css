@@ -27,6 +27,7 @@ h6 {
   overflow: scroll hidden;
   white-space: nowrap;
   padding: 6px 0px;
+  border-radius: 0.75rem !important;
 }
 
 .show-wrapper {
@@ -36,6 +37,10 @@ h6 {
   width: 300px;
   height: 200px;
   border-radius: 4px;
+}
+
+.show-wrapper-lg {
+  height: 100%;
 }
 
 .show-content {
@@ -56,18 +61,62 @@ h6 {
   transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
+.show-content-lg {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(26, 26, 26);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.781) 64%,
+    rgba(0, 0, 0, 0.555) 82%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translateY(218px);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.show-content h5 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 100%;
+}
+
 .show-img {
   width: 100%;
   position: relative;
-  top: -50%;
 }
 
-.show-wrapper:hover .show-content {
+.show-wrapper:hover .show-content,
+.show-wrapper:hover .show-content-lg {
   transform: translateY(0);
 }
 
-.show-content p {
+.show-wrapper:hover .show-content h5 {
+  white-space: break-spaces;
+  margin-bottom: 6px !important;
+}
+
+.show-img {
+  transform: scale(1);
+  transition: transform 0.25s ease-in-out;
+}
+
+.show-wrapper:hover .show-img {
+  transform: scale(1.05) !important;
+}
+
+.show-content p,
+.show-content-lg p {
   color: rgb(148, 148, 148);
+  margin-bottom: 14px !important;
   font-size: 0.8rem;
   width: 100%;
   overflow: hidden;
@@ -76,10 +125,10 @@ h6 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
-.show-content button {
+.show-content button,
+.show-content-lg button {
   border: none;
   border-radius: 4px;
   background-color: #e01214;
@@ -90,14 +139,15 @@ h6 {
   transition: background-color 0.25s ease;
 }
 
-.show-content button:hover {
+.show-content button:hover,
+.show-content-lg button:hover {
   background-color: #a80e10;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 8px;
+  height: 6px;
 }
 
 /* Track */
