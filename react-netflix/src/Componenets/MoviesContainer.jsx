@@ -13,7 +13,7 @@ class MoviesContainer extends React.Component {
   };
   fetchMovies = async () => {
     try {
-      let response = await fetch(request.url + request.Key_API);
+      let response = await fetch(request.url + "?" + request.Key_API);
 
       let movies = await response.json();
       this.setState({ trendingMovies: movies });
