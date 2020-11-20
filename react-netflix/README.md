@@ -3,9 +3,6 @@ Netflix, React Edition
       In this exercise you are gonna implement a ReactJS version of the Netflix
       home web interface.
 
-
-
-
         API INFO:
 
         Register to http://www.omdbapi.com/
