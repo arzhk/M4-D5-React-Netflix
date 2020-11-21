@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import MovieRow from "./MovieRow";
+
 class MoviesContainer extends React.Component {
   state = {
     trendingMovies: [

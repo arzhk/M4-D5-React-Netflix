@@ -5,18 +5,24 @@ import searchIcon from "../images/searchIcon.png";
 import giftIcon from "../images/giftIcon.png";
 import bell from "../images/bell.png";
 import user from "../images/user.png";
+import SearchBox from "../Components/SearchBox";
 class NavBar extends React.Component {
   state = {
     isSearch: false,
+    searchInput: "",
   };
 
   toggleSearch = () => {
     this.state.isSearch ? this.setState({ isSearch: false }) : this.setState({ isSearch: true });
   };
 
+  setInputValue = (e) => {
+    this.setState({ searchInput: e.currentTarget.value });
+  };
+
   render() {
     return (
-      <div>
+      <>
         <Navbar
           className="d-flex align-items-center"
           style={{
@@ -27,15 +33,15 @@ class NavBar extends React.Component {
           }}
         >
           <Navbar.Brand href="#home">
-            <img src={netflixlogo} width="auto" height="33px" className="mb-0 ml-4" alt="React Bootstrap logo" />
+            <img src={netflixlogo} width="auto" height="33px" className="mb-0 ml-4" alt="logo" />
           </Navbar.Brand>
           <Nav className="mr-auto mb-0">
-            <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Home</Nav.Link>
-            <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Tv Shows</Nav.Link>
-            <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Recently Added</Nav.Link>
-            <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>Recently Added</Nav.Link>
+            <Nav.Link style={{ color: "white" }}>Home</Nav.Link>
+            <Nav.Link style={{ color: "white" }}>Tv Shows</Nav.Link>
+            <Nav.Link style={{ color: "white" }}>Recently Added</Nav.Link>
+            <Nav.Link style={{ color: "white" }}>Recently Added</Nav.Link>
           </Nav>
-          <Form inline>
+          <Form inline onMouseLeave={this.state.searchInput.length === 0 && this.toggleSearch}>
             <img
               style={{
                 height: "20px",
@@ -43,16 +49,20 @@ class NavBar extends React.Component {
                 marginRight: "10px",
               }}
               src={searchIcon}
-              onClick={this.toggleSearch}
+              alt="search-icon"
+              onMouseEnter={!this.state.isSearchOpen && this.toggleSearch}
             ></img>
             <FormControl
+              id="search-box"
               className={this.state.isSearch ? "d-block" : "d-none"}
               style={{ backgroundColor: "transparent", borderRadius: "0" }}
               type="text"
-              placeholder="Titles,people,genres"
+              placeholder="Titles, people, genres"
+              onChange={this.setInputValue}
+              value={this.state.searchInput}
             />
             <Nav.Link style={{ color: "white", fontSize: "0.8rem" }}>KIDS</Nav.Link>
-            <img style={{ height: "20px", marginRight: "20px" }} src={giftIcon}></img>
+            <img style={{ height: "20px", marginRight: "20px" }} src={giftIcon} alt="gift-icon"></img>
           </Form>
           <img
             style={{
@@ -61,6 +71,7 @@ class NavBar extends React.Component {
               marginRight: "10px",
             }}
             src={bell}
+            alt="notifications-icon"
           ></img>{" "}
           <img
             style={{
@@ -69,9 +80,11 @@ class NavBar extends React.Component {
               marginRight: "10px",
             }}
             src={user}
+            alt="user-icon"
           ></img>
         </Navbar>
-      </div>
+        <SearchBox isSearchOpen={this.state.isSearch} searchInput={this.state.searchInput} />
+      </>
     );
   }
 }

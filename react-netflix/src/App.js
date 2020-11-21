@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import MoviesContainer from "./Componenets/MoviesContainer";
+import MoviesContainer from "./Components/MoviesContainer";
 import Navbar from "./Component/NavBar";
 import Jumbotron from "./Component/Jumbotron";
 import Footer from "./Component/Footer";
