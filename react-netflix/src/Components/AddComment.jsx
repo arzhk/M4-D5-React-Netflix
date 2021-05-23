@@ -40,12 +40,10 @@ class AddComment extends React.Component {
           },
         });
       } else {
-        console.log(this.state.comment);
         let error = await response.json();
         this.setState({
           errMessage: error.message,
         });
-        console.log(error);
       }
     } catch (e) {
       console.log(e);

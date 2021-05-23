@@ -11,6 +11,7 @@ class MovieRow extends React.Component {
 
   render() {
     const { title, movieData, isTall } = this.props;
+
     return (
       <div>
         <h2>{title}</h2>

@@ -1,14 +1,18 @@
 import React from "react";
-import { ListGroup, Col, Container, Row } from "react-bootstrap";
+import { ListGroup, Col, Container, Row, Spinner } from "react-bootstrap";
 import AddComment from "./AddComment";
 class CommentArea extends React.Component {
   state = {
     comments: [],
     movieID: this.props.movieID,
+    isLoading: true,
   };
 
   componentDidMount = () => {
     this.fetchComments();
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 500);
   };
 
   fetchComments = async () => {
@@ -21,13 +25,11 @@ class CommentArea extends React.Component {
       });
       let comments = await response.json();
       this.setState({ comments });
-      console.log(this.state.comments);
     } catch (er) {
       console.log(er);
     }
   };
   render() {
-    console.log(this.state.movieID);
     return (
       <div>
         <Container id="commentArea">
@@ -41,15 +43,22 @@ class CommentArea extends React.Component {
           </Row>
         </Container>
         <ListGroup.Item>
-          {this.state.comments.map((comment, index) => (
-            <p key={index}>
-              {comment.comment} (
-              {Array.from({ length: comment.rate }).map((star) => (
-                <span>&#9734;</span>
-              ))}
-              )
-            </p>
-          ))}
+          <h4>Comments</h4>
+          <div className={this.state.isLoading ? "d-block w-100" : "d-none"}>
+            <p className="d-inline-block mb-0 mr-2">Loading...</p>
+            <Spinner size="sm" animation="border" variant="danger" disabled />
+          </div>
+
+          {!this.state.isLoading &&
+            this.state.comments.map((comment, index) => (
+              <p key={index}>
+                {comment.comment} (
+                {Array.from({ length: comment.rate }).map((star, index) => (
+                  <span key={index}>&#9734;</span>
+                ))}
+                )
+              </p>
+            ))}
         </ListGroup.Item>
       </div>
     );
